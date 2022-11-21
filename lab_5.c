@@ -11,8 +11,9 @@ int main()
     fclose(file);
 
     file = fopen("demo_file.txt", "r");
-    fscanf(file, "%*s %*s", string_from_file);
+    fscanf(file, "%s", string_from_file);
 
     printf("%s\n", string_from_file);
+    fclose(file);
 
 }
