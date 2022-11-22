@@ -15,6 +15,7 @@ int main()
 {
     int student_count = 0;
     struct student *student_ptr;
+    char temp; // temporary variable to clear the buffer
 
     printf("Enter number of students: ");
     scanf("%d", &student_count);
@@ -23,8 +24,9 @@ int main()
 
     for (int i = 0; i < student_count; i++)
     {
+        scanf("%c", &temp);
         printf("Enter student #%d name: ", i + 1);
-        scanf("%s", (student_ptr + i)->name);
+        scanf("%[^\n]", (student_ptr + i)->name);
         printf("Enter student #%d age: ", i + 1);
         scanf("%d", &(student_ptr + i)->age);
     }
